@@ -68,6 +68,14 @@ const Header: React.FC = () => {
               {item.name}
             </a>
           ))}
+          <a
+            href="/Urbanforge_Portfolio.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link text-sm uppercase tracking-wider transition-colors duration-300"
+          >
+            Company Profile
+          </a>
           <a href="#contact" className="btn btn-primary text-sm uppercase tracking-wider">
             Get a Quote
           </a>
@@ -101,6 +109,15 @@ const Header: React.FC = () => {
                 {item.name}
               </a>
             ))}
+            <a
+              href="/Urbanforge_Portfolio.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-medium text-gray-600 hover:text-primary transition-colors"
+              onClick={closeMenu}
+            >
+              Company Profile
+            </a>
             <a
               href="#contact"
               className="btn btn-primary mt-4"
