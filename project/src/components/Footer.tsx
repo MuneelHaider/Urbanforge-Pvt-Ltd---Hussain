@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-3">
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <ul className="space-y-3">
@@ -89,21 +89,36 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-lg font-bold mb-6">Contact Us</h4>
             <ul className="space-y-3 text-gray-300">
               <li>
-                123 Architecture Avenue, <br />
-                Design District, City
+                <a 
+                  href="https://www.google.com/maps/place/Green+Trust+Tower%D8%8C+Service+Road,+Blue+Area,+Jinnah+Ave,+F+6%2F1+Blue+Area,+Islamabad,+44000,+Pakistan" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Off 1: Suite No. 1003 (A), 10th Floor, Green Trust Tower, Jinnah Avenue, Islamabad
+                </a>
               </li>
-              <li>info@urbanforge.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>Monday - Friday: 9:00 AM - 6:00 PM</li>
+              <li>
+                <a 
+                  href="https://www.google.com/maps/place/Adam+Plaza/@33.6387246,73.0678147,17z/data=!3m1!4b1!4m6!3m5!1s0x38df950038553acb:0x1726d64cdd3a7ddd!8m2!3d33.6387246!4d73.0678147!16s%2Fg%2F11y2rkx662" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Off 2: 5th Road Commercial Market Rd, ADAM Plaza, 4th Floor, D Block, Satellite Town, Rawalpindi, Pakistan
+                </a>
+              </li>
+              <li>contact@urbanforge.com</li>
+              <li>+92 3088828430</li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">

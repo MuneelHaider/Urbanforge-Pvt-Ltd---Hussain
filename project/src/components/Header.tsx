@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logoDark from '../assets/logo.png';
+import logoWhite from '../assets/logoWhite.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,14 +11,13 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      
-      // Set active section based on scroll position
+
       const sections = document.querySelectorAll('section[id]');
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute('id') || '';
-        
+
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           setActiveSection(sectionId);
         }
@@ -28,13 +28,8 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -53,7 +48,11 @@ const Header: React.FC = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="#home" className="z-10">
-          <img src={logo} alt="Urban Forge" className="h-18 md:h-20" />
+          <img
+            src={isScrolled ? logoDark : logoWhite}
+            alt="Urban Forge"
+            className="h-12 md:h-16"
+          />
         </a>
 
         {/* Desktop Menu */}
@@ -80,7 +79,7 @@ const Header: React.FC = () => {
           onClick={toggleMenu}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
 
         {/* Mobile Menu */}

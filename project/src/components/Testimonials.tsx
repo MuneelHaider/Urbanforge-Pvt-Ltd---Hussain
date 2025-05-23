@@ -27,19 +27,19 @@ const Testimonials: React.FC = () => {
   const testimonials = [
     {
       quote: "Urban Forge transformed our vision into reality. Their attention to detail and commitment to quality exceeded our expectations. The team was professional, responsive, and a pleasure to work with.",
-      name: "Sarah Johnson",
+      name: "Sarah",
       title: "Homeowner",
       image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       quote: "As a developer, I've worked with many construction firms, but Urban Forge stands out for their precision, timeliness, and innovation. They've become our go-to partner for all our architectural and construction needs.",
-      name: "Michael Chen",
+      name: "Hussain Malik",
       title: "Real Estate Developer",
       image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
       quote: "The interior design team at Urban Forge has an incredible eye for detail. They transformed our office space into a modern, functional environment that perfectly represents our brand and enhances our team's productivity.",
-      name: "Emily Rodriguez",
+      name: "Muneel Haider",
       title: "CEO, TechStart Inc.",
       image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },

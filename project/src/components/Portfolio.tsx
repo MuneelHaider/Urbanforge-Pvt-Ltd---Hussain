@@ -3,26 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const Portfolio: React.FC = () => {
   const [filter, setFilter] = useState('all');
   const portfolioRef = useRef<HTMLElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = portfolioRef.current?.querySelectorAll('.fade-in');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements?.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
 
   const projects = [
     {
@@ -72,6 +52,29 @@ const Portfolio: React.FC = () => {
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('appear');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = portfolioRef.current?.querySelectorAll('.fade-in');
+    elements?.forEach((el) => {
+      el.classList.remove('appear'); // Reset for fresh animation
+      observer.observe(el);
+    });
+
+    return () => {
+      elements?.forEach((el) => observer.unobserve(el));
+    };
+  }, [filteredProjects]);
 
   return (
     <section id="portfolio" ref={portfolioRef} className="section bg-gray-100">
