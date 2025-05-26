@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="max-w-md bg-white text-gray-800 rounded-lg p-8 mx-auto shadow-md">
+              <div className="max-w-md bg-white text-gray-800 rounded-xl p-8 mx-auto shadow-md">
                 <Quote className="h-10 w-10 text-sand mb-6" />
                 <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
                 <div className="flex items-center justify-center">
