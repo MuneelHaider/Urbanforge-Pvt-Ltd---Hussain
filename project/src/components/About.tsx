@@ -53,7 +53,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="section-title fade-in">About Urban Forge</h2>
           <p className="section-subtitle fade-in" style={{ transitionDelay: '200ms' }}>
-            Crafting exceptional spaces through innovative design and superior craftsmanship since 2008.
+            Crafting exceptional spaces through innovative design and superior craftsmanship since 2024.
           </p>
         </div>
 
