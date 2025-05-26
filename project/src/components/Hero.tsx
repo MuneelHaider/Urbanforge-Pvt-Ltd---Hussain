@@ -67,28 +67,33 @@ const Hero: React.FC = () => {
       {/* Foreground Content (Unchanged) */}
       <div className="container z-10">
         <div className="max-w-3xl text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 fade-in">
             Building Your Vision, <br />
             <span className="text-sand">Forging Your Future</span>
           </h1>
-          <p className="text-lg md:text-xl mb-8 opacity-90 fade-in" style={{ transitionDelay: '200ms' }}>
+          <p className="text-xl md:text-2xl mb-10 opacity-90 fade-in" style={{ transitionDelay: '200ms' }}>
             Urban Forge brings your architectural dreams to life with expert construction, 
             innovative architecture, and stunning interior design services.
           </p>
-          <div className="flex flex-wrap gap-4 fade-in" style={{ transitionDelay: '400ms' }}>
-            <a href="#services" className="btn btn-secondary">
+          <div className="flex flex-wrap gap-6 fade-in" style={{ transitionDelay: '400ms' }}>
+            <a href="#services" className="btn btn-secondary text-base md:text-lg">
               Our Services
             </a>
-            <a href="#portfolio" className="btn bg-transparent text-white border border-white hover:bg-white hover:text-primary group">
+            <a href="#portfolio" className="btn bg-transparent text-white border border-white hover:bg-white hover:text-primary group text-base md:text-lg">
               View Our Work
-              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={18} />
+              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
-        <a href="#about" className="text-white animate-bounce" aria-label="Scroll down">
+
+      <div className="absolute bottom-10 left-0 right-3 flex justify-center md:justify-center md:left-0 md:right-0 px-4 z-10">
+        <a
+          href="#about"
+          className="text-white animate-bounce md:ml-0 ml-auto"
+          aria-label="Scroll down"
+        >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             width="36" 
@@ -100,10 +105,11 @@ const Hero: React.FC = () => {
             strokeLinecap="round" 
             strokeLinejoin="round"
           >
-            <path d="M12 5v14M5 12l7 7 7-7"/>
+            <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
         </a>
       </div>
+
     </section>
   );
 };
