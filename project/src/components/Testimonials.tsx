@@ -19,12 +19,6 @@ const testimonials = [
     image: "https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
-    quote: "I hired Urban Forge for a full renovation at Minister Enclave, and they exceeded expectations. Their professionalism, discretion, and attention to heritage detailing were remarkable. I’d recommend them to anyone.",
-    name: "Hanif Abbasi",
-    title: "Minister, Pakistan Railway",
-    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  },
-  {
     quote: "We needed reliable tile work done in G-16 and Urban Forge delivered flawlessly. Their finishing, communication, and pricing transparency stood out from the rest. I’ll definitely hire them again for future projects.",
     name: "Sardar Ahmed",
     title: "Homeowner",
