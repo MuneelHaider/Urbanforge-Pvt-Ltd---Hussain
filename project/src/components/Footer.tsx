@@ -13,18 +13,19 @@ const Footer: React.FC = () => {
               Creating exceptional spaces through innovative design and superior craftsmanship since 2008.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61576456100102" className="text-gray-300 hover:text-white transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="Twitter">
+              {/* <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
+              </a> */}
+              <a href="https://www.instagram.com/urbanforge.constructors/profilecard/?igsh=MWNzYnJvNWg3Mm1rbA==" className="text-gray-300 hover:text-white transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="LinkedIn">
+              {/* <a href="#" className="text-gray-300 hover:text-white transition-colors" aria-label="LinkedIn">
                 <Linkedin size={20} />
-              </a>
+              </a> */}
+              
             </div>
           </div>
 
@@ -114,7 +115,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>contact@urbanforge.com</li>
-              <li>+92 3088828430</li>
+              <li>+92 3440105540</li>
             </ul>
           </div>
         </div>

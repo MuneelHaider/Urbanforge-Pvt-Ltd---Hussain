@@ -38,6 +38,7 @@ const Header: React.FC = () => {
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Profile', href: '/Urbanforge_Portfolio.pdf', target: '_blank', rel: 'noopener noreferrer' }
   ];
 
   return (
@@ -56,30 +57,26 @@ const Header: React.FC = () => {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`nav-link text-sm uppercase tracking-wider transition-colors duration-300 ${
-                activeSection === item.href.substring(1) ? 'active' : ''
-              }`}
+              target={item.target}
+              rel={item.rel ? 'noopener noreferrer' : undefined}
+              className={`nav-link ml-0 m-0 text-sm md:text-lg uppercase tracking-wider transition-colors duration-300 ${
+                isScrolled
+                  ? 'text-gray-800 hover:text-primary'
+                  : 'text-gray-100 hover:bg-white hover:text-primary'
+              } ${activeSection === item.href.substring(1) ? 'font-semibold underline underline-offset-4' : ''} px-3 py-1 rounded-md`}
             >
               {item.name}
             </a>
           ))}
-          <a
-            href="/Urbanforge_Portfolio.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-link text-sm uppercase tracking-wider transition-colors duration-300"
-          >
-            Company Profile
-          </a>
-          <a href="#contact" className="btn btn-primary text-sm uppercase tracking-wider">
+        </nav>
+        <a href="#contact" className="btn btn-primary text-sm uppercase tracking-wider">
             Get a Quote
           </a>
-        </nav>
 
         {/* Mobile Menu Button */}
         <button

@@ -57,6 +57,16 @@ const Services: React.FC = () => {
         'Material & Finish Selection',
         'Lighting Design & Space Planning'
       ]
+    },
+    {
+      icon: <PaintBucket className="h-12 w-12 text-primary" />,
+      title: 'Renovation',
+      description: "Our renovation services breathe new life into existing spaces while preserving their character and integrity. Whether it's a full-scale remodel or targeted upgrades, we collaborate closely with clients to enhance functionality, value, and aesthetics with minimal disruption.",
+      features: [
+        "Residential & Commercial Remodeling",
+        "Kitchen & Bathroom Upgrades",
+        "Structural & Layout Modifications",
+      ]
     }
   ];
 
@@ -70,11 +80,11 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-gray-100 rounded-lg p-8 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg fade-in"
+              className="bg-gray-200 rounded-lg p-8 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg fade-in"
               style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
               <div className="mb-6">{service.icon}</div>

@@ -1,83 +1,83 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import { Quote } from 'lucide-react';
 
+const testimonials = [
+  {
+    quote: "Urban Forge took our farmhouse project to the next level. From the boundary wall to the complete construction, their team delivered with transparency, punctuality, and craftsmanship. We couldn’t be more satisfied.",
+    name: "Musarat Naqvi",
+    title: "Pakistan Naval Farms",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    quote: "The Commercial Hub in Jand was a massive undertaking, but Urban Forge handled it with expertise. Their modern designs, quality control, and commitment to timelines made them a trusted partner for our development.",
+    name: "Malik Sheheryar Jamshaid",
+    title: "Real Estate Developer",
+    image: "https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    quote: "I hired Urban Forge for a full renovation at Minister Enclave, and they exceeded expectations. Their professionalism, discretion, and attention to heritage detailing were remarkable. I’d recommend them to anyone.",
+    name: "Hanif Abbasi",
+    title: "Minister, Pakistan Railway",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    quote: "We needed reliable tile work done in G-16 and Urban Forge delivered flawlessly. Their finishing, communication, and pricing transparency stood out from the rest. I’ll definitely hire them again for future projects.",
+    name: "Sardar Ahmed",
+    title: "Homeowner",
+    image: "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    quote: "Urban Forge managed my house renovation with complete professionalism. They were responsive, respectful, and turned my vision into reality with minimal disruption. Their team’s craftsmanship is top-notch and I highly recommend thier services.",
+    name: "Syed Daniyal",
+    title: "Homeowner",
+    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
+
 const Testimonials: React.FC = () => {
-  const testimonialsRef = useRef<HTMLElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('appear');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = testimonialsRef.current?.querySelectorAll('.fade-in');
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => {
-      elements?.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
-  const testimonials = [
-    {
-      quote: "Urban Forge transformed our vision into reality. Their attention to detail and commitment to quality exceeded our expectations. The team was professional, responsive, and a pleasure to work with.",
-      name: "Sarah",
-      title: "Homeowner",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      quote: "As a developer, I've worked with many construction firms, but Urban Forge stands out for their precision, timeliness, and innovation. They've become our go-to partner for all our architectural and construction needs.",
-      name: "Hussain Malik",
-      title: "Real Estate Developer",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-    {
-      quote: "The interior design team at Urban Forge has an incredible eye for detail. They transformed our office space into a modern, functional environment that perfectly represents our brand and enhances our team's productivity.",
-      name: "Muneel Haider",
-      title: "CEO, TechStart Inc.",
-      image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    },
-  ];
-
   return (
-    <section id="testimonials" ref={testimonialsRef} className="section bg-primary text-white">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 fade-in">Client Testimonials</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 fade-in" style={{ transitionDelay: '200ms' }}>
-            What our clients say about working with Urban Forge.
-          </p>
-        </div>
+    <section id="testimonials" className="section bg-primary text-white py-16">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+        <p className="text-xl text-gray-300 mb-12">
+          What our clients say about working with Urban Forge.
+        </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={30}
+          loop={true}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          grabCursor={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="testimonial-card bg-white text-gray-800 rounded-lg p-8 fade-in"
-              style={{ transitionDelay: `${300 + index * 100}ms` }}
-            >
-              <Quote className="h-10 w-10 text-sand mb-6" />
-              <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
-              <div className="flex items-center">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-bold text-primary">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.title}</p>
+            <SwiperSlide key={index}>
+              <div className="max-w-md bg-white text-gray-800 rounded-lg p-8 mx-auto shadow-md">
+                <Quote className="h-10 w-10 text-sand mb-6" />
+                <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
+                <div className="flex items-center justify-center">
+                  <div>
+                    <h4 className="font-bold text-primary">{testimonial.name}</h4>
+                    <p className="text-gray-600 text-sm">{testimonial.title}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

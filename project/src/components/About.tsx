@@ -27,23 +27,23 @@ const About: React.FC = () => {
   const stats = [
     { 
       icon: <Building2 className="h-10 w-10 text-primary" />,
-      count: '250+',
+      count: '15+',
       label: 'Projects Completed'
     },
     { 
       icon: <Users className="h-10 w-10 text-primary" />,
-      count: '50+',
+      count: '12+',
       label: 'Team Members'
     },
     { 
       icon: <Clock className="h-10 w-10 text-primary" />,
-      count: '15+',
+      count: '1+',
       label: 'Years Experience'
     },
     { 
       icon: <Award className="h-10 w-10 text-primary" />,
-      count: '20+',
-      label: 'Awards Won'
+      count: '5+',
+      label: 'Certifications and Awards'
     },
   ];
 
@@ -74,15 +74,14 @@ const About: React.FC = () => {
           <div className="fade-in" style={{ transitionDelay: '400ms' }}>
             <h3 className="text-2xl font-bold text-primary mb-6">Our Story</h3>
             <p className="text-gray-700 mb-6">
-              Founded in 2008, Urban Forge has grown from a small design studio to a comprehensive 
-              construction and design firm serving clients across the region. Our philosophy is simple: 
-              deliver exceptional quality, innovative design, and unparalleled service.
+              UrbanForge Pvt Ltd was born in 2024, not in a boardroom—but in the minds of two passionate civil engineering graduates determined to do things differently. Fueled by friendship, ambition, and a shared vision for the future of construction, we launched UrbanForge right after completing our degrees.
             </p>
             <p className="text-gray-700 mb-8">
-              What sets us apart is our integrated approach. By offering construction, architecture, and 
-              interior design under one roof, we ensure seamless project execution from concept to completion. 
-              Our team of experts collaborates closely to create spaces that are not only aesthetically 
-              pleasing but also functional and sustainable.
+              
+As young professionals with fresh eyes and bold ideas, we saw the industry not just as it was—but as it could be. We combined technical expertise with a creative edge to redefine what it means to build. Innovation isn't a buzzword for us—it's our blueprint. From concept to completion, we infuse every project with originality, precision, and a relentless drive for excellence.
+            </p>
+            <p className="text-gray-700 mb-8">
+At UrbanForge, we’re not just constructing buildings—we’re crafting experiences, shaping skylines, and forging the future of modern living. As the new generation of engineers, we dare to design differently, and we’re just getting started.
             </p>
             <a href="#services" className="btn btn-primary">
               Explore Our Services
