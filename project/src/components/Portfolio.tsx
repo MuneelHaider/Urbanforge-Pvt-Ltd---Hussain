@@ -26,6 +26,7 @@ const Portfolio: React.FC = () => {
         "/projects/Pakistan_Naval_Farms/5.jpg",
         "/projects/Pakistan_Naval_Farms/6.jpg",
         "/projects/Pakistan_Naval_Farms/7.jpg",
+        "/projects/Pakistan_Naval_Farms/8.jpg",
       ],
       description:
         "Farmhouse construction project including boundary wall and residential unit. The site included grading, foundation work, and landscaping. Delivered with high-quality finish and on-time execution.",
