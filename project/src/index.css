@@ -7,14 +7,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply font-sans;
   }
   
   body {
     @apply antialiased bg-white;
+    @apply font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    @apply font-sans;
   }
 }
 

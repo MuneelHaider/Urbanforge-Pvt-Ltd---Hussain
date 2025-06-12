@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '/logoWhite.png';
 
 const Footer: React.FC = () => {
   return (
@@ -126,9 +126,8 @@ const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Urban Forge Pvt Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="/#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="/#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="/#" className="hover:text-white transition-colors">Sitemap</a>
+              <p className="hover:text-white transition-colors">Privacy Policy</p>
+              <p className="hover:text-white transition-colors">Terms of Service</p>
             </div>
           </div>
         </div>

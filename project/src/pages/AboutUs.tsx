@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Building2, Users, Clock, Award } from "lucide-react";
+import TeamSection from "../components/TeamSection";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -76,7 +77,7 @@ const AboutUs: React.FC = () => {
     },
     {
       name: "Engr. Hussain Muzaffar",
-      title: "MD / Civil Engineer",
+      title: "Managing Director / Civil Engineer",
       img: "/team/hussain.jpg",
       category: "Leadership",
     },
@@ -225,7 +226,7 @@ const AboutUs: React.FC = () => {
                 design differently, and we’re just getting started.
               </p>
               <a
-                href="/#services"
+                href="#services"
                 className="btn btn-secondary bg-gray-800 text-white px-6 py-2 rounded inline-block"
               >
                 Explore Our Services
@@ -253,45 +254,48 @@ const AboutUs: React.FC = () => {
 
       {/* TIMELINE */}
       <section className="bg-gray-200 pt-24 pb-8 text-black">
-        <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-16">Our Journey</h2>
-          <br />
-          <div className="relative max-w-5xl mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary -translate-x-1/2" />
-            {timeline.map((item, i) => (
-              <div
-                key={i}
-                className={`mb-2 flex flex-col md:flex-row items-center ${
-                  i % 2 === 0 ? "md:justify-start" : "md:justify-end"
-                }`}
-              >
-                <div
-                  className={`w-full md:w-1/2 px-4 ${
-                    i % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                  }`}
-                >
-                  <div className="bg-gray-600 p-6 rounded-lg shadow">
-                    <div className="flex items-center mb-4">
-                      <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mr-3 font-bold">
-                        {i + 1}
-                      </div>
-                      <h4 className="font-bold text-2xl text-gray-100">
-                        {item.year} — {item.title}
-                      </h4>
-                    </div>
-                    <p className="text-gray-100">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+  <div className="container">
+    <div className="relative max-w-5xl mx-auto">
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary -translate-x-1/2" />
+
+      {timeline.map((item, i) => (
+        <div
+  key={i}
+  className={`mb-6 flex flex-col md:flex-row items-center ${
+    i % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
+  }`}
+>
+  <div
+    className={`w-[85%] md:w-1/2 px-2 ${
+      i % 2 === 0 ? 'ml-0 mr-auto md:ml-0 md:pr-8' : 'mr-0 ml-auto md:mr-0 md:pl-8'
+    }`}
+  >
+    <div className="bg-gray-600 p-3 md:p-6 rounded-lg shadow">
+      <div className="flex items-center mb-2 md:mb-4">
+        <div className="w-6 h-6 md:w-8 md:h-8 text-xs md:text-sm rounded-full bg-primary text-white flex items-center justify-center mr-2 md:mr-3 font-bold">
+          {i + 1}
         </div>
-      </section>
+        <h4 className="font-bold text-sm md:text-2xl text-white leading-snug md:leading-normal">
+          {item.year} — {item.title}
+        </h4>
+      </div>
+      <p className="text-xs md:text-base text-white leading-snug md:leading-normal">
+        {item.description}
+      </p>
+    </div>
+  </div>
+</div>
+
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* CLIENTS SECTION */}
       <section className="bg-white py-20">
   <div className="container">
-    <h2 className="text-5xl font-bold text-center mb-12">Our Clients</h2><br />
+    <h2 className="font-sans text-5xl font-bold text-center mb-12">Our Clients</h2><br />
 
     {/* Hidden overflow and animated loop */}
     <div className="overflow-hidden relative">
@@ -343,33 +347,9 @@ const AboutUs: React.FC = () => {
 
 
       {/* TEAM SECTION */}
-      <section className="bg-gray-100 py-24 text-black">
-        <div className="container">
-          <h2 className="text-5xl font-bold text-center mb-8">
-            Meet the <span className="text-primary">Team</span>
-          </h2>
-          <br />
-          <br />
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
-            {visibleTeam.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="group text-center bg-white hover:bg-gray-200 rounded-lg p-4 transition-all duration-300">
-                  <div className="w-48 aspect-square mx-auto overflow-hidden border-primary rounded-full group-hover:rounded-none transition-all duration-300">
-                    <img
-                      src={member.img}
-                      alt={member.name}
-                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <h4 className="font-bold mt-4">{member.name}</h4>
-                  <p className="text-sm text-gray-600">{member.title}</p>
-                </div>
-                <br />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
+
+
     </>
   );
 };

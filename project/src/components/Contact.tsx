@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
     <section id="contact" ref={contactRef} className="section">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="section-title fade-in">Contact Us</h2>
+          <h2 className="section-title fade-in text-5xl">Contact Us</h2>
           <p className="section-subtitle fade-in" style={{ transitionDelay: '200ms' }}>
             Ready to start your project? Get in touch with our team for a consultation.
           </p>

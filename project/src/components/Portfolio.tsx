@@ -144,7 +144,7 @@ const Portfolio: React.FC = () => {
     <section id="portfolio" ref={portfolioRef} className="section bg-gray-100">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="section-title fade-in">Our Portfolio</h2>
+          <h2 className="section-title fade-in text-5xl">Our Portfolio</h2>
           <p
             className="section-subtitle fade-in"
             style={{ transitionDelay: "200ms" }}

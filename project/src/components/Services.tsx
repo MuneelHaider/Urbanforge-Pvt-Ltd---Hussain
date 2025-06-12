@@ -74,7 +74,7 @@ const Services: React.FC = () => {
     <section id="services" ref={servicesRef} className="section">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="section-title fade-in">Our Services</h2>
+          <h2 className="section-title fade-in text-5xl">Our Services</h2>
           <p className="section-subtitle fade-in" style={{ transitionDelay: '200ms' }}>
             Comprehensive solutions for all your building and design needs under one roof.
           </p>

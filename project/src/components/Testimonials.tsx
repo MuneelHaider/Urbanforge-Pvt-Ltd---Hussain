@@ -36,7 +36,7 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="section bg-primary text-white py-16">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-5xl">Client Testimonials</h2>
         <p className="text-xl text-gray-300 mb-12">
           What our clients say about working with Urban Forge.
         </p>
