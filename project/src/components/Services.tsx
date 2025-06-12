@@ -103,7 +103,7 @@ const Services: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center fade-in" style={{ transitionDelay: '600ms' }}>
-          <a href="#contact" className="btn btn-primary">
+          <a href="/#contact" className="btn btn-primary">
             Request a Consultation
           </a>
         </div>

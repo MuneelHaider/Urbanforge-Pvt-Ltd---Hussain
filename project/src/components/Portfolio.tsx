@@ -241,7 +241,7 @@ const Portfolio: React.FC = () => {
           className="mt-16 text-center fade-in"
           style={{ transitionDelay: "800ms" }}
         >
-          <a href="#contact" className="btn btn-primary">
+          <a href="/#contact" className="btn btn-primary">
             Start Your Project
           </a>
         </div>

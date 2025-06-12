@@ -76,10 +76,10 @@ const Hero: React.FC = () => {
             innovative architecture, and stunning interior design services.
           </p>
           <div className="flex flex-wrap gap-6 fade-in" style={{ transitionDelay: '400ms' }}>
-            <a href="#services" className="btn btn-secondary text-base md:text-lg">
+            <a href="/#services" className="btn btn-secondary text-base md:text-lg">
               Our Services
             </a>
-            <a href="#portfolio" className="btn bg-transparent text-white border border-white hover:bg-white hover:text-primary group text-base md:text-lg">
+            <a href="/#portfolio" className="btn bg-transparent text-white border border-white hover:bg-white hover:text-primary group text-base md:text-lg">
               View Our Work
               <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
             </a>
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute bottom-10 left-0 right-3 flex justify-center md:justify-center md:left-0 md:right-0 px-4 z-10">
         <a
-          href="#about"
+          href="AboutUs"
           className="text-white animate-bounce md:ml-0 ml-auto"
           aria-label="Scroll down"
         >

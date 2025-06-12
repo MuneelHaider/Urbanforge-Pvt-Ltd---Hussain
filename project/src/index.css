@@ -89,3 +89,127 @@
 .testimonial-card:hover {
   @apply -translate-y-2 shadow-lg;
 }
+
+/* Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  opacity: 0;
+}
+.custom-cursor.visible {
+  opacity: 1;
+}
+.custom-cursor.active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Flip Cards */
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.group-hover\:rotate-y-180:hover > div {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Scale */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonial Slider Card */
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.author-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  height: 4px;
+  background-color: #f97316; /* orange-500 for tailwind */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 4px;
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 50%;
+}
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 2rem;
+}
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 2rem;
+}
+.timeline-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}

@@ -33,27 +33,27 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#home" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/AboutUs" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Services
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#portfolio" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Portfolio
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#contact" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Contact
                 </a>
               </li>
@@ -64,27 +64,27 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Architecture
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Construction
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Interior Design
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Project Management
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight size={16} className="mr-2" /> Consulting
                 </a>
               </li>
@@ -126,9 +126,9 @@ const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Urban Forge Pvt Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Sitemap</a>
+              <a href="/#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="/#" className="hover:text-white transition-colors">Sitemap</a>
             </div>
           </div>
         </div>

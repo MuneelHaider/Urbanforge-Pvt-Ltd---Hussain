@@ -32,12 +32,12 @@ const Header: React.FC = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/AboutUs/' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Portfolio', href: '/#portfolio' },
+    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Contact', href: '/#contact' },
     { name: 'Profile', href: '/Urbanforge_Portfolio.pdf', target: '_blank', rel: 'noopener noreferrer' }
   ];
 
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="#home" className="z-10">
+        <a href="/#home" className="z-10">
           <img
             src={isScrolled ? logoDark : logoWhite}
             alt="Urban Forge"
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
             </a>
           ))}
         </nav>
-        <a href="#contact" className="btn btn-primary text-sm uppercase tracking-wider">
+        <a href="/#contact" className="btn btn-primary text-sm uppercase tracking-wider">
             Get a Quote
           </a>
 
@@ -116,7 +116,7 @@ const Header: React.FC = () => {
               Company Profile
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="btn btn-primary mt-4"
               onClick={closeMenu}
             >
