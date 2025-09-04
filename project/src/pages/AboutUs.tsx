@@ -78,7 +78,7 @@ const AboutUs: React.FC = () => {
     {
       name: "Engr. Hussain Muzaffar",
       title: "Managing Director / Civil Engineer",
-      img: "/team/hussain.jpg",
+      img: "/team/hussain2.jpg",
       category: "Leadership",
     },
     {

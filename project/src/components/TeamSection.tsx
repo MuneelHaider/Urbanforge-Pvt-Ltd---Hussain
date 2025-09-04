@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const team = [
   { name: "Engr. Samir Shahid", title: "CEO / Civil Engineer", img: "", category: "Leadership", gender: "male" },
-  { name: "Engr. Hussain Muzaffar", title: "Managing Director / Civil Engineer", img: "/team/hussain.jpg", category: "Leadership", gender: "male" },
+  { name: "Engr. Hussain Muzaffar", title: "Managing Director / Civil Engineer", img: "/team/hussain2.jpg", category: "Leadership", gender: "male" },
   { name: "Zain Idrees", title: "Architect / Interior Designer", img: "", category: "Design", gender: "male" },
   { name: "Engr. Rayan Ali", title: "Project Manager", img: "", category: "Engineering", gender: "male" },
   { name: "Unzillah Najeeb", title: "Marketing Head", img: "", category: "Marketing", gender: "female" },
