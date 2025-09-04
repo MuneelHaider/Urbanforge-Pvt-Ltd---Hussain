@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                   Off 2: 5th Road Commercial Market Rd, ADAM Plaza, 4th Floor, D Block, Satellite Town, Rawalpindi, Pakistan
                 </a>
               </li>
-              <li>contact@urbanforge.com</li>
+              <li>sales@urbanforgeconstructors.com</li>
               <li>+92 3440105540</li>
             </ul>
           </div>

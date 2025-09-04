@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-800 mb-1">Email Us</h4>
-                  <p className="text-gray-600">contact@urbanforge.com</p>
+                  <p className="text-gray-600">sales@urbanforgeconstructors.com</p>
                 </div>
               </div>
 
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
                     type="email"
                     id="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="contact@urbanforge.com"
+                    placeholder="sales@urbanforgeconstructors.com"
                     required
                   />
                 </div>
@@ -155,7 +155,7 @@ const Contact: React.FC = () => {
                     type="tel"
                     id="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="+92 3088828430"
+                    placeholder="+92 3440105540"
                   />
                 </div>
 
