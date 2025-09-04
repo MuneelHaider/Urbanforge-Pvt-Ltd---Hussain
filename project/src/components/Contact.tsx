@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const contactRef = useRef<HTMLElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [successAnimateIn, setSuccessAnimateIn] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,6 +26,43 @@ const Contact: React.FC = () => {
       elements?.forEach((el) => observer.unobserve(el));
     };
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
+    try {
+      const form = e.currentTarget;
+      const data = new FormData(form);
+
+      // enforce desired defaults
+      data.set('_cc', 'sales@urbanforgeconstructors.com');
+      data.set('_subject', 'New contact form submission - Urban Forge');
+      data.set('_template', 'table');
+
+      const res = await fetch('https://formsubmit.co/ajax/managingdirector@urbanforgeconstructors.com', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      });
+      if (!res.ok) throw new Error('Failed to submit');
+
+      setShowSuccess(true);
+      // trigger enter animation on next tick
+      setTimeout(() => setSuccessAnimateIn(true), 10);
+      // auto close after 2s with exit animation
+      setTimeout(() => {
+        setSuccessAnimateIn(false);
+        setTimeout(() => setShowSuccess(false), 250);
+      }, 2000);
+      form.reset();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" ref={contactRef} className="section">
@@ -121,8 +161,8 @@ const Contact: React.FC = () => {
             <div className="bg-white p-8 rounded-lg shadow-custom">
               <h3 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
 
-              <form action="https://formsubmit.co/managingdirector@urbanforgeconstructors.com" method="POST">
-                <input type="hidden" name="_cc" value="muneelhaider@gmail.com" />
+              <form onSubmit={handleSubmit}>
+                <input type="hidden" name="_cc" value="sales@urbanforgeconstructors.com" />
                 <input type="hidden" name="_subject" value="New contact form submission - Urban Forge" />
                 <input type="text" name="_honey" style={{ display: 'none' }} />
                 <input type="hidden" name="_template" value="table" />
@@ -191,15 +231,57 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full btn btn-primary"
+                  className={`w-full btn btn-primary ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending…' : 'Send Message'}
                 </button>
               </form>
             </div>
           </div>
         </div>
       </div>
+      {showSuccess && (
+        <div
+          className={`fixed inset-0 z-[9999] flex items-center justify-center px-4 ${successAnimateIn ? 'bg-black/50' : 'bg-black/0'} transition-colors duration-300`} 
+          onClick={() => {
+            setSuccessAnimateIn(false);
+            setTimeout(() => setShowSuccess(false), 200);
+          }}
+          role="presentation"
+        >
+          <div
+            className={`relative w-full max-w-sm sm:max-w-md ${successAnimateIn ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-3 scale-95'} transition-all duration-300`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="rounded-2xl shadow-2xl bg-white overflow-hidden">
+              <div className="bg-gradient-to-r from-primary to-emerald-500 p-5 sm:p-6 text-white text-center">
+                <div className="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-7 w-7">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <path d="M22 4 12 14.01l-3-3" />
+                  </svg>
+                </div>
+                <h4 className="text-lg sm:text-xl font-bold">Message sent!</h4>
+                <p className="text-white/90 text-sm sm:text-base">Thank you for contacting Urban Forge.</p>
+              </div>
+              <div className="p-4 sm:p-5 text-center">
+                <p className="text-gray-700 text-sm sm:text-base">We'll get back to you shortly.</p>
+                <button
+                  type="button"
+                  className="mt-4 inline-flex w-full sm:w-auto justify-center rounded-md bg-primary px-5 py-2 text-white hover:bg-primary/90 transition-colors"
+                  onClick={() => {
+                    setSuccessAnimateIn(false);
+                    setTimeout(() => setShowSuccess(false), 200);
+                  }}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
