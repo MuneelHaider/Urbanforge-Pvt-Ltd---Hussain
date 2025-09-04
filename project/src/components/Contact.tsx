@@ -24,11 +24,6 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your message! This is a frontend-only demo, so no message was actually sent.');
-  };
-
   return (
     <section id="contact" ref={contactRef} className="section">
       <div className="container">
@@ -126,12 +121,17 @@ const Contact: React.FC = () => {
             <div className="bg-white p-8 rounded-lg shadow-custom">
               <h3 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
 
-              <form onSubmit={handleSubmit}>
+              <form action="https://formsubmit.co/managingdirector@urbanforgeconstructors.com" method="POST">
+                <input type="hidden" name="_cc" value="muneelhaider@gmail.com" />
+                <input type="hidden" name="_subject" value="New contact form submission - Urban Forge" />
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                <input type="hidden" name="_template" value="table" />
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 mb-2">Full Name</label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Hussain Malik"
                     required
@@ -143,6 +143,7 @@ const Contact: React.FC = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="sales@urbanforgeconstructors.com"
                     required
@@ -154,6 +155,7 @@ const Contact: React.FC = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="+92 3440105540"
                   />
@@ -163,6 +165,7 @@ const Contact: React.FC = () => {
                   <label htmlFor="service" className="block text-gray-700 mb-2">Service Interested In</label>
                   <select
                     id="service"
+                    name="service"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     required
                   >
@@ -178,6 +181,7 @@ const Contact: React.FC = () => {
                   <label htmlFor="message" className="block text-gray-700 mb-2">Your Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Tell us about your project..."
