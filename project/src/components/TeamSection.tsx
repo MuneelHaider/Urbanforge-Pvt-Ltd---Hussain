@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const team = [
-  { name: "Engr. Samir Shahid", title: "CEO / Civil Engineer", img: "", category: "Leadership", gender: "male" },
-  { name: "Engr. Hussain Muzaffar", title: "Managing Director / Civil Engineer", img: "/team/hussain2.jpg", category: "Leadership", gender: "male" },
+  { name: "Engr. Samir Shahid", title: "CEO / Civil Engineer", img: "", category: "Leadership", gender: "male", email: "chiefexecutiveofficer@urbanforgeconstructors.com" },
+  { name: "Engr. Hussain Muzaffar", title: "Managing Director / Civil Engineer", img: "/team/hussain2.jpg", category: "Leadership", gender: "male", email: "managingdirector@urbanforgeconstructors.com" },
   { name: "Zain Idrees", title: "Architect / Interior Designer", img: "", category: "Design", gender: "male" },
   { name: "Engr. Rayan Ali", title: "Project Manager", img: "", category: "Engineering", gender: "male" },
   { name: "Unzillah Najeeb", title: "Marketing Head", img: "", category: "Marketing", gender: "female" },
@@ -58,6 +58,11 @@ const TeamSection: React.FC = () => {
                 </div>
                 <h4 className="font-bold mt-4">{member.name}</h4>
                 <p className="text-sm text-gray-600">{member.title}</p>
+                {member.email && (
+                  <p className="text-[10px] text-gray-600 mt-1 break-all leading-tight">
+                    <a className="hover:underline" href={`mailto:${member.email}`}>{member.email}</a>
+                  </p>
+                )}
               </div>
               <br />
             </div>
